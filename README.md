@@ -5,6 +5,7 @@ Overview
 This project is a Flask-based web application that predicts loan approval status using a trained K-Nearest Neighbors (KNN) model. The model uses various customer features to determine if a loan application will be approved or not.
 
 #Features
+
 User Input Form: Users can enter data into a web form to get a prediction on loan approval.
 Real-Time Prediction: Uses a trained KNN model to provide predictions based on user input.
 Model Training: Includes code to train and evaluate the KNN model using a dataset of bank loan applications.
@@ -14,23 +15,6 @@ Flask: Web framework for creating the web application.
 Scikit-Learn: For machine learning model and data preprocessing.
 Joblib: For model serialization and deserialization.
 HTML/CSS/JavaScript: For front-end development.
-
-
-#File Structure
-.
-├── app.py              # Main Flask application file
-├── knn_model.pkl       # Trained KNN model
-├── static
-│   ├── css
-│   │   └── styles.css  # CSS styles for the web page
-│   ├── js
-│   │   └── scripts.js  # JavaScript file for form handling
-│   └── images
-│       └── logo.png    # Placeholder for images
-├── templates
-│   └── index.html      # HTML template for the web page
-├── README.md           # Project documentation
-└── requirements.txt    # List of Python dependencies
 
 
 #Usage
