@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Approval Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Loan Approval Prediction</h1>
+            <div class="dropdown">
+                <button class="dropbtn">Help</button>
+                <div class="dropdown-content">
+                    <p><strong>ID:</strong> ID of the customer</p>
+                    <p><strong>Age:</strong> Age of the customer in completed years</p>
+                    <p><strong>Experience:</strong> Amount of work experience in years</p>
+                    <p><strong>Income:</strong> Amount of annual income (in thousands)</p>
+                    <p><strong>Zipcode:</strong> Postal code in which the client lives</p>
+                    <p><strong>Family:</strong> Number of family members</p>
+                    <p><strong>CCAvg:</strong> Average monthly spending with the credit card (in thousands)</p>
+                    <p><strong>Education:</strong> Education level (1: bachelor's degree, 2: master's degree, 3: advanced/professional degree)</p>
+                    <p><strong>Mortgage:</strong> Value of home mortgage, if any (in thousands)</p>
+                    <p><strong>Securities Account:</strong> Does the customer have a securities account with the bank?</p>
+                    <p><strong>CD Account:</strong> Does the customer have a certificate of deposit account (CD) with the bank?</p>
+                    <p><strong>Online:</strong> Does the customer use the internet banking facilities?</p>
+                    <p><strong>CreditCard:</strong> Does the customer use a credit card issued by the bank?</p>
+                </div>
+            </div>
+        </div>
+        <form id="predictionForm">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+                <label for="income">Annual Income (in thousands):</label>
+                <input type="number" id="income" name="income" required>
+            </div>
+            <div class="form-group">
+                <label for="family">Number of Family Members:</label>
+                <input type="number" id="family" name="family" required>
+                <label for="education">Education Level:</label>
+                <select id="education" name="education" required>
+                    <option value="1">Bachelor's degree</option>
+                    <option value="2">Master's degree</option>
+                    <option value="3">Advanced/Professional degree</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ccavg">Average Monthly Credit Card Spending (in thousands):</label>
+                <input type="number" id="ccavg" name="ccavg" required>
+            </div>
+            <div class="form-group">
+                <label for="mortgage">Home Mortgage Value (in thousands):</label>
+                <input type="number" id="mortgage" name="mortgage" required>
+            </div>
+            <div class="form-group">
+                <label for="securities_account">Securities Account:</label>
+                <select id="securities_account" name="securities_account" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <label for="cd_account">CD Account:</label>
+                <select id="cd_account" name="cd_account" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="online">Uses Online Banking:</label>
+                <select id="online" name="online" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <label for="creditcard">Uses Bank's Credit Card:</label>
+                <select id="creditcard" name="creditcard" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
